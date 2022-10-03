@@ -705,13 +705,13 @@ WIN_SetWindowPosition(_THIS, SDL_Window * window)
     /* HighDPI support: removed SWP_NOSIZE. If the move results in a DPI change, we need to allow
      * the window to resize (e.g. AdjustWindowRectExForDpi frame sizes are different).
      */
-    WIN_SetWindowPositionInternal(_this, window, SWP_NOCOPYBITS | SWP_NOACTIVATE);
+    WIN_SetWindowPositionInternal(_this, window, SWP_NOCOPYBITS | SWP_NOACTIVATE | SWP_ASYNCWINDOWPOS);
 }
 
 void
 WIN_SetWindowSize(_THIS, SDL_Window * window)
 {
-    WIN_SetWindowPositionInternal(_this, window, SWP_NOCOPYBITS | SWP_NOMOVE | SWP_NOACTIVATE);
+    WIN_SetWindowPositionInternal(_this, window, SWP_NOCOPYBITS | SWP_NOMOVE | SWP_NOACTIVATE | SWP_ASYNCWINDOWPOS);
 }
 
 int
